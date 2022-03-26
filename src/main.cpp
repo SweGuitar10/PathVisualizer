@@ -1,24 +1,11 @@
 #include <SFML/Graphics.hpp>
+#include "testcode/bouncingRect.cpp"
+// One liner to comile and exec cuz I'm lazy: mingw32-make.exe; ./main.exe
 
 int main()
-{
-    sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Blue);
-
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
-
+{  
+    BouncingRect bouncer;
+    bouncer.Run();
     return 0;
 }
+
